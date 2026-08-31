@@ -1,0 +1,19 @@
+# Secrets and local runtime data
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+cookies/
+secrets/
+private/
+logs/
+state/
+.cache/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+__pycache__/

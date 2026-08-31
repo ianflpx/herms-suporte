@@ -1,0 +1,66 @@
+# Exemplo sem segredos. Copie para a configuração do bot e injete os valores no ambiente.
+# Não coloque tokens, senhas, cookies ou OAuth neste arquivo.
+
+brand:
+  name: AbaTools
+  support_signature: AbaTools Support Team
+  internal_language: pt-BR
+  default_customer_languages: [en, it, fr, de, es, pt]
+
+environment:
+  timezone: America/Sao_Paulo
+  mode: assisted_review # audit_only | assisted_review | safe_automation
+
+integrations:
+  gmail:
+    enabled: true
+    credentials_env: SUPPORT_GMAIL_CREDENTIALS
+    allow_send: false # habilitar somente após revisão e testes
+    mark_read_after_success: true
+  snapp_mcp:
+    enabled: true
+    oauth_profile_env: SNAPP_MCP_OAUTH_PROFILE
+    preferred: true
+    browser_fallback: false
+  discord:
+    enabled: true
+    token_env: DISCORD_BOT_TOKEN
+    alert_target: discord:1517268381441462415
+    conversation_target: "" # preencher com ID estável, não nome do canal
+
+policy:
+  require_purchase_verification_for_access: true
+  require_exact_product_and_language: true
+  never_send_multiple_links: true
+  escalate_refunds: true
+  escalate_chargebacks: true
+  escalate_fraud_claims: true
+  escalate_duplicate_charge_claims: true
+  escalate_unclear_entitlement: true
+  no_credentials_in_logs: true
+
+routes:
+  app:
+    en: https://app.abatools.pro/en/
+    fr: https://app.abatools.pro/fr/
+    es: https://app.abatools.pro/es/
+    it: https://app.abatools.pro/it/
+    de: https://app.abatools.pro/de/
+  ot_500:
+    en: https://500-ot.abatools.pro/en/access/
+    fr: https://500-ot.abatools.pro/fr/access/
+    es: https://500-ot.abatools.pro/es/access/
+    it: https://500-ot.abatools.pro/it/access/
+    de: https://500-ot.abatools.pro/de/access/
+  asd:
+    en: https://asd.abatools.pro/access/
+    fr: https://asd.abatools.pro/fr/access/
+    es: https://asd.abatools.pro/es/access/
+    it: https://asd.abatools.pro/it/access/
+    de: https://asd.abatools.pro/de/access/
+  ptp:
+    fr: https://ptp.abatools.pro/fr/access/
+    it: https://ptp.abatools.pro/it/access/
+  speech_therapy:
+    en: https://speechtherapypro.online/en/access/
+    it: https://speechtherapypro.online/it/access/
